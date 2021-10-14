@@ -14,6 +14,9 @@ public class HomeWorkApp {
 
         checkAndPrintNumber(-50);
         checkAndPrintNumber(20);
+
+        System.out.println("checkNumber(-40) = " + checkNumber(-40));
+        System.out.println("checkNumber(60) = " + checkNumber(60));
     }
 
     public static boolean checkSum(int firstTerm, int secondTerm) {
@@ -24,5 +27,9 @@ public class HomeWorkApp {
     public static void checkAndPrintNumber(int number) {
         if (number >= 0) System.out.println("Положительное");
         else System.out.println("Отрицательное");
+    }
+
+    public static boolean checkNumber(int number) {
+        return number <= 0;
     }
 }
