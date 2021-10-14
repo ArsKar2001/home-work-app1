@@ -19,6 +19,13 @@ public class HomeWorkApp {
         System.out.println("checkNumber(60) = " + checkNumber(60));
 
         printStrByCount("( ~ - 3 -)~", 10);
+
+        System.out.println("checkLeapYear(2016) = " + checkLeapYear(2016));
+        System.out.println("checkLeapYear(2000) = " + checkLeapYear(2000));
+        System.out.println("checkLeapYear(1777) = " + checkLeapYear(1777));
+        System.out.println("checkLeapYear(2020) = " + checkLeapYear(2020));
+        System.out.println("checkLeapYear(2021) = " + checkLeapYear(2021));
+        System.out.println("checkLeapYear(2012) = " + checkLeapYear(2012));
     }
 
     public static boolean checkSum(int firstTerm, int secondTerm) {
@@ -37,5 +44,12 @@ public class HomeWorkApp {
 
     public static void printStrByCount(String str, int count) {
         for (int i = 0; i < count; i++) System.out.println(str);
+    }
+
+    public static boolean checkLeapYear(int year) {
+        if (year % 4 != 0) return false;
+        else if (year % 100 == 0)
+            return year % 400 == 0;
+        return true;
     }
 }
