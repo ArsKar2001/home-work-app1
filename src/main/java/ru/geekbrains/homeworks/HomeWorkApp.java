@@ -17,6 +17,8 @@ public class HomeWorkApp {
 
         System.out.println("checkNumber(-40) = " + checkNumber(-40));
         System.out.println("checkNumber(60) = " + checkNumber(60));
+
+        printStrByCount("( ~ - 3 -)~", 10);
     }
 
     public static boolean checkSum(int firstTerm, int secondTerm) {
@@ -31,5 +33,9 @@ public class HomeWorkApp {
 
     public static boolean checkNumber(int number) {
         return number <= 0;
+    }
+
+    public static void printStrByCount(String str, int count) {
+        for (int i = 0; i < count; i++) System.out.println(str);
     }
 }
