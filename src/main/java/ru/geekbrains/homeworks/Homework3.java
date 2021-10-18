@@ -1,12 +1,23 @@
 package ru.geekbrains.homeworks;
 
 import java.util.Arrays;
+import java.util.concurrent.ThreadLocalRandom;
 
 public class Homework3 {
     public static void main(String[] args) {
-        int[] mas = {1, 5, 3, 2, 11, 4, 5, 2, 4, 8, 9, 1};
-        for (int i = 0; i < mas.length; i++)
-            if (mas[i] < 6) mas[i] *= 2;
-        System.out.println(Arrays.toString(mas));
+        ThreadLocalRandom rnd = ThreadLocalRandom.current();
+
+        // Сгенерирует случайное число от 5 до 10;
+        int n = rnd.nextInt(5) + 5;
+        int[][] mas = new int[n][n];
+
+        for (int i = 0, j = 0; i < mas.length; i++, j++)
+            mas[i][j] = rnd.nextInt(8) + 1;
+
+        for (int i = mas.length - 1, j = 0; i >= 0; i--, j++)
+            mas[i][j] = rnd.nextInt(8) + 1;
+
+        for (int[] member : mas)
+            System.out.println(Arrays.toString(member));
     }
 }
