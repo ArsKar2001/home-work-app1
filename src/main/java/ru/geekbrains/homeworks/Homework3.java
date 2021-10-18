@@ -7,20 +7,21 @@ public class Homework3 {
     public static void main(String[] args) {
         ThreadLocalRandom rnd = ThreadLocalRandom.current();
 
-        int len = rnd.nextInt(10) + 3;
-        int initialValue = rnd.nextInt(10);
-        int[] arr = generateArray(len, initialValue);
+        int len = rnd.nextInt(7) + 3;
+        int[] arr = new int[len];
+
+        for (int i = 0; i < arr.length; i++)
+            arr[i] = rnd.nextInt(10);
+
+        int minValue = arr[0];
+        int maxValue = arr[0];
+        for (int i = 1; i < arr.length; i++) {
+            if (minValue > arr[i]) minValue = arr[i];
+            if (maxValue < arr[i]) maxValue = arr[i];
+        }
 
         System.out.println(Arrays.toString(arr));
-    }
-
-    private static int[] generateArray(int len, int initialValue) {
-        int[] newArr = new int[len];
-
-        for (int i = 0; i < newArr.length; i++)
-            newArr[i] = initialValue;
-        // или так :D
-        //Arrays.fill(newArr, initialValue);
-        return newArr;
+        System.out.println("maxValue = " + maxValue);
+        System.out.println("minValue = " + minValue);
     }
 }
