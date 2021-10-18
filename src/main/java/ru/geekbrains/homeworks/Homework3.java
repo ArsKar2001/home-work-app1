@@ -7,17 +7,20 @@ public class Homework3 {
     public static void main(String[] args) {
         ThreadLocalRandom rnd = ThreadLocalRandom.current();
 
-        // Сгенерирует случайное число от 5 до 10;
-        int n = rnd.nextInt(5) + 5;
-        int[][] mas = new int[n][n];
+        int len = rnd.nextInt(10) + 3;
+        int initialValue = rnd.nextInt(10);
+        int[] arr = generateArray(len, initialValue);
 
-        for (int i = 0, j = 0; i < mas.length; i++, j++)
-            mas[i][j] = rnd.nextInt(8) + 1;
+        System.out.println(Arrays.toString(arr));
+    }
 
-        for (int i = mas.length - 1, j = 0; i >= 0; i--, j++)
-            mas[i][j] = rnd.nextInt(8) + 1;
+    private static int[] generateArray(int len, int initialValue) {
+        int[] newArr = new int[len];
 
-        for (int[] member : mas)
-            System.out.println(Arrays.toString(member));
+        for (int i = 0; i < newArr.length; i++)
+            newArr[i] = initialValue;
+        // или так :D
+        //Arrays.fill(newArr, initialValue);
+        return newArr;
     }
 }
